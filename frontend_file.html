@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ebd0ec, #e5a4e0, #d28adc);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
+            color: white;
+        }
+        header {
+            background: linear-gradient(to right, #ebd0ec, #e5a4e0, #ebd0ec);
+        }
+        .subheading {
+            font-size: 0.9rem;
+            font-family: 'Arial', sans-serif;
+        }
+        .border-box {
+            border: 2px solid #c163e4;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .carousel-item img {
+            height: 300px;
+            width: 80%;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        .option-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .option-container button {
+            margin: 10px;
+        }
+        .option-content {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .option-content img {
+            width: 50%;
+            height: auto;
+            margin: 10px auto;
+        }
+        .my-4 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-white text-center py-3">
+        <h1>Beauty Dashboard</h1>
+        <div class="d-flex justify-content-around">
+            <h5 class="subheading">150+ Brands</h5>
+            <h5 class="subheading">15 cr+ Customers</h5>
+            <h5 class="subheading">6.5 cr+ Reviews</h5>
+        </div>
+    </header>
+
+    <div class="container my-4">
+        <!-- Bootstrap Picture Carousel -->
+        <div id="pictureCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://client.shivsofts.com/blog/uploads/1719390084.jpeg" class="d-block" alt="Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://imgmedia.lbb.in/media/2022/05/6273625542d07e2c4a83e20f_1651728981457.jpg" class="d-block" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.mommygearest.com/wp-content/uploads/2017/10/best-beauty-products-2017-1024x768.jpg" class="d-block" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.5tQ6l509J0_wmOZmkZrZ-gHaEJ&pid=Api&P=0&h=180" class="d-block" alt="Image 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Box -->
+        <div class="border-box">
+            <h5 style="background: linear-gradient(to right, #e5a4e0, #d28adc); color: white; padding: 5px;">International Beauty Brands in India</h5>
+            <p>Waking up every day to the news of a global beauty brand making its way to India is a feeling I’ll never have enough of. So, by the power vested in me by the gods of manifestation, I hereby manifest the arrival of more and more international beauty brands in India in 2025. 
+
+                Access to international beauty brands for the Indian market was no less than a desire, but that was back then. Now, it seems like a cakewalk for Indian vanities to witness the charm of International beauty brands. The brands that strolled in our wishlists yesterday, reign supreme in our carts today – consider this the ripple effect of India’s growing global presence. From hunting brands at the airports to having them at the luxury of your doorstep, Indian beauty sure has come a long way. Lately, we see some of the largest beauty brands placing their bets on India, indicating how we are in line to be the next big players in the global beauty market. Having said that, despite dozens of international beauty brands already reserving their spots on the Indian aisles, there still is a void that needs to be filled. 
+                
+                Since the heart of a beauty enthusiast always yearns for more, there is so much more that is still wandering in our wishlists. The bandwagon may have been brimming with plenty of international beauty brands, but there is still a long list demanding our attention. Names like Armani Beauty, NARs, and Yves Saint Laurent are already attracting attention in India, so here are a few more international beauty brands we are manifesting for the upcoming year. </p>
+        </div>
+
+        <!-- Option Buttons -->
+        <div class="option-container">
+            <h3 style="background: linear-gradient(to right, #ebd0ec, #c163e4); color: white; padding: 5px;">Top Brands</h3>
+            <button class="btn btn-primary" onclick="showOptionContent(1)">Lakmé</button>
+            <button class="btn btn-primary" onclick="showOptionContent(2)">Maybelline</button>
+            <button class="btn btn-primary" onclick="showOptionContent(3)">L’Oréal Paris</button>
+        </div>
+
+        <!-- Option Content -->
+        <div id="optionContent" class="option-content">
+            <h4> Top International Brands in India </h4>
+            <p><b>The above are some best International Brands in India.</b></p>
+            <p>[Click on the above buttons to know more about them]</p>
+            <img src="https://client.shivsofts.com/blog/uploads/1719390084.jpeg" alt="Lakmé Image">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- Light/Dark Mode Switch -->
+    <div class="position-fixed bottom-0 end-0 p-3">
+        <button id="modeSwitch" class="btn btn-secondary"> Light Mode / Dark Mode </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const modeSwitch = document.getElementById('modeSwitch');
+        modeSwitch.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        function showOptionContent(option) {
+            const optionContent = document.getElementById('optionContent');
+            const content = [
+                {
+                    title: "Lakmé",
+                    description: "Lakmé is an Indian cosmetics brand owned by Hindustan Unilever. It was named after the French opera Lakmé, which itself is the French word for the goddess Lakshmi who is renowned for her beauty. It was started in 1952 as a 100% subsidiary of Tata Oil Mills, famously after Prime Minister Jawaharlal Nehru was concerned that Indian women were spending precious foreign exchange on beauty products and persuaded JRD Tata to manufacture them in India. Simone Tata joined the company as director and went on to become chairperson. In 1998, Tatas sold their stake in Lakmé to Hindustan Unilever for ₹200 crore (US$48.46 million).  Lakmé mainly sells coloured cosmetic products such as lipsticks, eyeliners and skincare cream. In December 2018, it launched its e-commerce platform. As of 2021, Lakmé also runs 485 beauty salons under Lakmé Lever. The company is the title sponsor for Lakmé Fashion Week (LFW), a bi-annual fashion week which takes place in Mumbai.",
+                    image: "https://www.marketing91.com/wp-content/uploads/2018/06/Marketing-Strategy-of-LAKME-3.jpg"
+                },
+                {
+                    title: "Maybelline",
+                    description: "Maybelline is known for its innovative makeup products and affordable pricing.Maybelline New York (formerly The Maybelline Company and Mabelline and Co.), trading as and commonly known as simply Maybelline (/ˈmeɪbɪliːn/ MAY-bil-een), is an American multinational cosmetics, skin care, perfume, and personal care company, based in New York City. Founded in Chicago in 1914, it has been a subsidiary of French cosmetics company L'Oréal since 1996.",
+                    image: "http://emmiesbeautylife.com/wp-content/uploads/2018/10/maybellinemain.jpg"
+                },
+                {
+                    title: "L’Oréal Paris",
+                    description: "L’Oréal Paris offers premium beauty products and is a global leader in cosmetics. L'Oréal S.A. (French: [lɔʁe.al]) is a French multinational personal care corporation registered in Paris and headquartered in Clichy, Hauts-de-Seine. It is the world's largest cosmetics company. It has developed activities in the field concentrating on hair color, skin care, sun protection, make-up, perfumes and hair care. The company is also active in dermatology, toxicology, tissue engineering and biopharmaceutical research and has a dedicated research and innovation division.",
+                    image: "https://www.fabulousandfunlife.com.au/wp-content/uploads/2017/10/Loreal-Makeup-Bag.jpg"
+                }
+            ];
+            const selected = content[option - 1];
+            optionContent.innerHTML = `
+                <h4>${selected.title}</h4>
+                <p>${selected.description}</p>
+                <img src="${selected.image}" alt="${selected.title} Image">
+            `;
+        }
+    </script>
+</body>
+</html>
